@@ -1,0 +1,40 @@
+logging:
+  file:
+    name: myapp.log
+    path: '.  '
+#spring:
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
+springdoc:
+  show-actuator: 'true'
+api-docs:
+  path: v3/api-docs
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  data:
+    mongodb:
+      database: sampledb
+      host: localhost
+      port: 27017
+  main:
+    web-environment: true
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+jwt:
+  secret: secretkey
+  token:
+    validity: '18000'
+server:
+  port: 9000
