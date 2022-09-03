@@ -2,7 +2,8 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - main
+      - branch - dev-sonar
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
